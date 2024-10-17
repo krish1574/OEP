@@ -1,0 +1,465 @@
+/* #921A40
+#C75B7A
+#D9ABAB
+#F4D9D0  */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #dad4b5;
+  background-size: 300% 300%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.Outer-Box {
+  color: rgb(218, 218, 202);
+  display: flex;
+  max-height: 35rem;
+  max-width: 70rem;
+  margin-top: 3rem;
+  margin-left: 7.8rem;
+  border-radius: 15px;
+  animation: slideUp 1s ease-out;
+  position: absolute;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.Inner-Box {
+  position: relative;
+  color: beige;
+  display: flex;
+  height: 35rem;
+  width: 45rem;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  z-index: 2;
+}
+
+.Inner-Box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../Images/bg-img.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.Outer-Box .Sign-Up-Component {
+  background-color: rgba(241, 241, 241, 0.856);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+}
+#Title-Outer-Box {
+  display: inline;
+  position: absolute;
+  top: 3rem;
+}
+#Welcome-SU-Title {
+  position: absolute;
+  color: rgb(0, 175, 175);
+  margin-bottom: 10rem;
+}
+#img-donor {
+  position: absolute;
+  mix-blend-mode: multiply;
+  border: none;
+  height: 300px;
+  width: 300px;
+  rotate: calc(-38deg);
+  left: -7rem;
+  top: -2rem;
+  animation: swim 7s ease-out infinite;
+}
+.Inner-Box .form_elements {
+  display: flex;
+  position: absolute;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.Field {
+  margin-bottom: 2rem;
+  height: 3rem;
+  width: 25rem;
+  display: flex;
+  background-color: #e2decc96;
+  color: black;
+  font-size: 16px;
+  border-radius: 15px;
+  padding: 10px;
+  border: none;
+}
+
+#Btn-Login {
+  background-color: #dad4b5c4;
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+  width: 5rem;
+  position: absolute;
+  left: 10rem;
+  font-size: 16px;
+}
+
+.Login-Box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35rem;
+  width: 45rem;
+}
+#Img-Syringe {
+  position: absolute;
+  mix-blend-mode: multiply;
+  height: 300px;
+  width: 300px;
+  rotate: calc(-30deg);
+  right: -7rem;
+  bottom: -2rem;
+  animation: swim 7s ease-in-out infinite;
+}
+
+#Btn-SignUp {
+  background-color: rgba(0, 175, 175, 0.804);
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 16px;
+  display: flex;
+  position: absolute;
+  top: 21rem;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+#text_welcome {
+  display: block;
+  position: absolute;
+  color: chocolate;
+  font-size: 18px;
+}
+
+.Inner-Box-Sign-Up {
+  position: relative;
+  color: beige;
+  display: flex;
+  height: 35rem;
+  width: 45rem;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  z-index: 2;
+}
+.Inner-Box-Sign-Up::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../Images/bg-img.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.Sign-Up-Box {
+  opacity: 0;
+  position: absolute;
+  color: beige;
+  display: flex;
+  height: 35rem;
+  width: 45rem;
+  justify-content: center;
+  align-items: center;
+}
+#Btn-Sign-In {
+  background-color: #dad4b5c4;
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+  width: 5rem;
+  position: absolute;
+  left: 10rem;
+  font-size: 16px;
+}
+.Back-Login {
+  opacity: 0;
+  background-color: rgba(241, 241, 241, 0.856);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 35rem;
+  width: 22rem;
+  left: 0.5rem;
+}
+
+#Title-Sign-Up {
+  position: absolute;
+  color: rgb(0, 175, 175);
+  margin-bottom: 10rem;
+}
+
+#Text-Sign-Up {
+  display: block;
+  position: absolute;
+  color: chocolate;
+  font-size: 18px;
+}
+#Btn-SignIn {
+  background-color: rgba(0, 175, 175, 0.804);
+  border: none;
+  border-radius: 25px;
+  height: 2.5rem;
+  width: 5rem;
+  font-size: 16px;
+  display: flex;
+  position: absolute;
+  top: 21rem;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+/* for Active class  */
+
+.Outer-Box.active .Sign-Up-Component {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  display: none;
+}
+.Outer-Box.active .Back-Login {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.Outer-Box.active .Sign-Up-Box {
+  transform: translateX(50%);
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.Outer-Box.active .Inner-Box {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  display: none;
+}
+
+/* for Inactive Class */
+
+.Outer-Box.inactive .Sign-Up-Component {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+.Outer-Box.inactive .Back-Login {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.Outer-Box.inactive .Sign-Up-Box {
+  transform: translateX(50%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.Outer-Box.inactive .Inner-Box {
+  transform: translateX(0%);
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Move-left {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes swim {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-30px) translateX(15px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Responsive Code  */
+
+@media screen and (min-width: 1000px) {
+  .Outer-Box {
+    height: 35rem;
+    width: 50rem;
+  }
+  .Sign-Up-Component {
+    z-index: 5;
+  }
+  .Inner-Box-Sign-Up {
+    left: -17.5rem;
+    height: 35rem;
+    width: 35rem;
+  }
+  .Sign-Up-Box {
+    height: 35rem;
+    width: 50rem;
+  }
+  .Back-Login {
+    left: -0.1rem;
+    width: 15rem;
+    height: 35rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Outer-Box {
+    left: 5rem;
+    top: 4rem;
+  }
+  #img-donor {
+    height: 22rem;
+    width: 22rem;
+  }
+  #Img-Syringe {
+    height: 22rem;
+    width: 22rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .Outer-Box {
+    max-height: 50rem;
+    max-width: 180rem;
+    top: 4rem;
+    height: 50rem;
+    width: 95rem;
+  }
+
+  #img-donor {
+    height: 22rem;
+    width: 22rem;
+  }
+
+  #Img-Syringe {
+    height: 22rem;
+    width: 22rem;
+  }
+
+  .Inner-Box {
+    height: 50rem;
+    width: 65rem;
+  }
+
+  .Outer-Box .Sign-Up-Component {
+    width: 30rem;
+  }
+
+  .Sign-Up-Box {
+    height: 50rem;
+    width: 65rem;
+  }
+
+  .Inner-Box-Sign-Up {
+    left: -2.5rem;
+    height: 50rem;
+    width: 65rem;
+  }
+
+  .Back-Login {
+    left: -0.1rem;
+    width: 30rem;
+    height: 50rem;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request</title>
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="donate_request.css">
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <ul>
+                <li class="head">BLOOD AID PORTAL</li>
+            </ul>
+            <ul>
+                <li class="tabs"><a href="homepage.html">Home</a></li>
+                <li class="tabs"><a href="donate.html">Donate</a></li>
+                <li class="tabs"><a href="request.html">Request</a></li>
+                <li class="tabs"><a href="nearbyusers.html">Nearby Centers</a></li>
+                <li class="tabs"><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="form">
+            <div class="form-content">
+                <form id="requestForm" method="post" action="requestconfirmation.php">
+                    <input name="patient_name" type="text" placeholder="Patient Name" required /><br>
+                    <input name="age" type="number" placeholder="Age" min="1" max="120" required /><br>
+                    <input name="phone_number" type="tel" placeholder="Phone Number" pattern="[6-9]\d{9}" title="Phone number must start with 6, 7, 8, or 9 and be exactly 10 digits." required /><br>
+
+                    <select name="required_blood_group" required>
+                        <option value="" disabled selected>Required Blood Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select><br>
+
+                    <select name="select_hospital" required>
+                        <option value="" disabled selected>Select Hospital</option>
+                        <option>Baps Pramukh Swami Hospital</option>
+                        <option>INS Hospital</option>
+                        <option>Kiran Surgical Hospital</option>
+                        <option>Mahavir General Hospital</option>
+                        <option>New Civil Hospital</option>
+                        <option>Smimer Hospital</option>
+                        <option>Surat Civil Hospital</option>
+                    </select><br>
+
+                    <label>Required On (Optional): </label>
+                    <input name="required_date" type="date" id="requiredDate"><br> <!-- Ensure date is not in the past -->
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul class="bottom">
+                <li id="bottom_right">©Copyright 2024</li>
+                <li id="bottom_left">For any query contact: +45 1893451893 | bloodaidportal@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add additional client-side validation
+        document.getElementById('requestForm').addEventListener('submit', function(event) {
+            const requiredDate = document.getElementById('requiredDate').value;
+            const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+            
+            if (requiredDate && requiredDate < today) {
+                alert("The required date cannot be in the past.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+
+</html>

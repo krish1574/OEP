@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="donatepage.css">
+    <script>
+        function validateForm() {
+            const name = document.forms["donationForm"]["name"].value;
+            const age = document.forms["donationForm"]["age"].value;
+            const mobileNo = document.forms["donationForm"]["mobileno"].value;
+            const bloodGroup = document.forms["donationForm"]["blood_group"].value;
+            const hospital = document.forms["donationForm"]["hospital"].value;
+            const timeSlot = document.forms["donationForm"]["time_slot"].value;
+            const date = document.forms["donationForm"]["date"].value;
+            const lastDonated = document.forms["donationForm"]["last_donated"].value;
+
+            // Name validation
+            if (name == "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            // Age validation
+            if (age < 18 || age > 65) {
+                alert("You must be between 18 and 65 years old to donate.");
+                return false;
+            }
+
+            // Mobile number validation (basic pattern check)
+            const mobilePattern = /^\d{10}$/; // Assuming a 10-digit phone number
+            if (!mobilePattern.test(mobileNo)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            // Blood group validation
+            if (bloodGroup == "") {
+                alert("Please select your blood group.");
+                return false;
+            }
+
+            // Hospital validation
+            if (hospital == "") {
+                alert("Please select a hospital.");
+                return false;
+            }
+
+            // Time slot validation
+            if (timeSlot == "") {
+                alert("Please select a time slot.");
+                return false;
+            }
+
+            // Date validation (check if date is in the past)
+            const today = new Date();
+            const donationDate = new Date(date);
+            if (donationDate < today) {
+                alert("Donation date cannot be in the past.");
+                return false;
+            }
+
+            // Last donated validation (check if last donation date is not in the future)
+            const lastDonationDate = new Date(lastDonated);
+            if (lastDonationDate > today) {
+                alert("Last donation date cannot be in the future.");
+                return false;
+            }
+
+            // If all validations pass, return true
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <ul>
+                <li class="head">BLOOD AID PORTAL</li>
+            </ul>
+            <ul>
+                <li class="tabs"><a href="homepage.html">Home</a></li>
+                <li class="tabs"><a href="donate.html">Donate</a></li>
+                <li class="tabs"><a href="request.html">Request</a></li>
+                <li class="tabs"><a href="nearbyusers.html">Nearby Centers</a></li>
+                <li class="tabs"><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="donateform">
+            <div class="form-content">
+                <form name="donationForm" onsubmit="return validateForm()" method="get" action="DonationConfirmationPage.php">
+                    <input name="name" type="text" placeholder="Name" required /><br>
+                    <input name="age" type="number" placeholder="Age" required /><br>
+                    <input name="mobileno" type="tel" placeholder="Phone Number" required /><br>
+                    <select name="blood_group" required>
+                        <option value="" disabled selected>Blood Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select><br>
+                    <select name="hospital" required>
+                        <option value="" disabled selected>Select Hospital</option>
+                        <option>Baps Pramukh Swami Hospital</option>
+                        <option>INS Hospital</option>
+                        <option>Kiran Surgical Hospital</option>
+                        <option>Mahavir General Hospital</option>
+                        <option>New Civil Hospital</option>
+                        <option>Smimer Hospital</option>
+                        <option>Surat Civil Hospital</option>
+                    </select><br>
+                    <select name="time_slot" required>
+                        <option value="" disabled selected>Select Time Slot</option>
+                        <option>8 AM - 10 AM</option>
+                        <option>11 AM - 1 PM</option>
+                        <option>3 PM - 5 PM</option>
+                    </select>
+                    <label>Preferred Donation Date: </label>
+                    <input type="date" name="date" required><br>
+                    <label>Last Donated: </label>
+                    <input type="date" name="last_donated" required><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="bottom">
+                <li id="bottom_right">©Copyright 2024</li>
+                <li id="bottom_left">For any query contact: +45 1893451893 | bloodaidportal@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
